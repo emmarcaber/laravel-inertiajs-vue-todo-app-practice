@@ -82,4 +82,19 @@ function confirmDelete() {
             </div>
         </div>
     </AuthenticatedLayout>
+
+    <div v-if="showDeleteModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div class="bg-white rounded-lg shadow-md w-full max-w-sm p-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Confirm Deletion</h2>
+            <p class="text-gray-600 mb-6">Are you sure you want to delete this task?</p>
+            <div class="flex justify-end">
+                <button @click="confirmDelete" class="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-2 rounded">
+                    Delete
+                </button>
+                <button @click="showDeleteModal = false" class="ml-2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-2 rounded">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
 </template>
