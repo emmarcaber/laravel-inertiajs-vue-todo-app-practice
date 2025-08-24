@@ -8,6 +8,9 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
 
 const showingNavigationDropdown = ref(false);
+const taskRouteActive = route().current('tasks.index')
+    || route().current('tasks.create')
+    || route().current('tasks.edit');
 </script>
 
 <template>
@@ -31,7 +34,8 @@ const showingNavigationDropdown = ref(false);
                                     Dashboard
                                 </NavLink>
 
-                                <NavLink :href="route('tasks.index')" :active="route().current('tasks.index')">
+                                <NavLink :href="route('tasks.index')"
+                                    :active="taskRouteActive">
                                     Tasks
                                 </NavLink>
                             </div>
